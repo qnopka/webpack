@@ -1,12 +1,14 @@
+import * as $ from 'jquery';
+
 function createStatistics() {
     let counter = 0;
     const listener = () => counter++;
     let isDestroyed = false;
-    document.addEventListener('click', listener);
+    $(document).on('click', listener);
 
     return {
         destroy() {
-            document.removeEventListener('click', listener);
+            $(document).off('click', listener);
             isDestroyed = true;
         },
 
