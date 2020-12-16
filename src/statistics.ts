@@ -1,9 +1,10 @@
 import * as $ from 'jquery';
 
-function createStatistics() {
-    let counter = 0;
-    const listener = () => counter++;
-    let isDestroyed = false;
+function createStatistics(): object {
+    let counter: number = 0;
+    const listener = (): number => counter++;
+    let isDestroyed: boolean = false;
+
     $(document).on('click', listener);
 
     return {
@@ -19,4 +20,4 @@ function createStatistics() {
     }
 }
 
-window.statistics = createStatistics();
+window['statistics']  = createStatistics();
